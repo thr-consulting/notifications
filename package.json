@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "prepublish": "npm run build",
-    "test": "npm run build && mocha --compilers js:babel-core/register"
+    "test": "npm run build && NODE_ENV=test mocha --compilers js:babel-core/register --require ./test/helpers.js --require ./test/dom.js --recursive",
+    "tdd": "NODE_ENV=test npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -27,8 +28,6 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
-    "cheerio": "^0.22.0",
     "enzyme": "^2.8.2",
     "jsdom": "^9.12.0",
     "jsdom-global": "^2.1.1",
@@ -36,6 +35,8 @@
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.6.1",
+    "sinon": "^2.3.5",
     "webpack": "^2.4.1",
     "webpack-node-externals": "^1.5.4"
   },
@@ -44,6 +45,6 @@
   },
   "dependencies": {
     "react-notification-system": "^0.2.13",
-    "tproptypes": "^0.1.5"
+    "tproptypes": "^0.1.6"
   }
 }
