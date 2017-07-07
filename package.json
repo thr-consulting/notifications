@@ -1,6 +1,6 @@
 {
   "name": "notifications",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Notifications Addon that displays growl-like messages.",
   "main": "dist/index.js",
   "scripts": {
